@@ -36,18 +36,17 @@ type MobileMenuProps = {
 
 const MobileMenu = styled.div<MobileMenuProps>`
     box-sizing:border-box;
-    height:30px;
+    height:1px;
     background: white;
-    z-index:1;
     color: black;
     postion: relative;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    transform: translateY(-1000%);
+    transform: translateY(-30000%);
     transition: transform 0.6s ease-in-out;
     ${({ isOpen }) =>
-        (isOpen? `transform: translateY(50%)`:`translateY(-1000%)`)};
+        (isOpen? `transform: translateY(50%)`:`translateY(-30000%)`)};
 `;
 
 const NavBar:React.FC = () => {
@@ -72,7 +71,7 @@ const NavBar:React.FC = () => {
         <>
                 {!isMobile ? (
                     <>
-                    <div className={css`position:fixed;width:calc(100%);`}>
+                    <div className={css`position:fixed;width:calc(100%);top:0;`}>
                         <Menu>
                             <div className={css`padding: 10px;`}>사이트 이름</div>
                             <div className={css`display: flex; gap: 10px;`}>

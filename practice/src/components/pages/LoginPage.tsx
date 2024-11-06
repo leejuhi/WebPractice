@@ -6,8 +6,8 @@ import { css } from "@emotion/css";
 import NavBar from "../navBar/navBar.tsx";
 
 const Container = styled.div`
-    postion: relative;
     margin:30px;
+    margin-top:100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
