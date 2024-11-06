@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import GlobalStyle from './asset/font/GlobalStyle';
+import GlobalStyle from './asset/font/GlobalStyle.tsx';
+import HomePage from './components/pages/HomePage.tsx';
 
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
       <GlobalStyle />
         <BrowserRouter>
           <Routes>
-
+            <Route path="/" element={<HomePage />} />
           </Routes>
         </BrowserRouter>
     </>
