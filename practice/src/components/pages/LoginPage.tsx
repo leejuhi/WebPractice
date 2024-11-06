@@ -3,7 +3,7 @@ import React from "react";
 import styled from "@emotion/styled"
 import { Link } from "react-router-dom";
 import { css } from "@emotion/css";
-import NavBar from "../navBar/navBar.tsx";
+import NavBar from "../navBar/NavBar.tsx";
 
 const Container = styled.div`
     margin:30px;

@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "../navBar/navBar.tsx";
+import NavBar from "../navBar/NavBar.tsx";
 
 
 const ActivityPage = () => {

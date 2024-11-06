@@ -125,7 +125,7 @@ const NavBar:React.FC = () => {
                     <MobileMenu isOpen={isMenuOpen}>
                                 <Space><StyledLink to="/">홈페이지</StyledLink></Space>
                                 <Space><StyledLink to="/activity">활동</StyledLink></Space>
-                                <Space><StyledLink to="/recruit">지원하기</StyledLink></Space>
+                                <Space><StyledLink to="/recruit">지원</StyledLink></Space>
                                 <Space><StyledLink to="/qna">문의</StyledLink></Space>
                                 <Space><StyledLink to="/login">로그인</StyledLink></Space>
                     </MobileMenu>
