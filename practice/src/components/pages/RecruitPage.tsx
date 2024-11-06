@@ -4,8 +4,9 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/css";
 
 const BackGround=styled.div`
-    width:100%;
-    height:700px;
+    box-sizing:border-box;
+    width:calc(100%);
+    height: 100%;
     background:linear-gradient(white,#037ffc);
     display:flex;
     padding:100px;

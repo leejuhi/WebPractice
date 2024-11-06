@@ -4,13 +4,14 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Menu = styled.div`
+    background-color:white;
     box-sizing: border-box;
     padding: 15px 50px;
     font-size: 18px;
     top: 0px;
     display: flex;
     justify-content: space-between;
-`;
+    `;
 
 const Space = styled.div`
     box-sizing: border-box;
@@ -42,11 +43,11 @@ const MobileMenu = styled.div<MobileMenuProps>`
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding-left:30px;
+    padding:10px 30px;
     transform: translateY(-150%);
     transition: transform 0.6s ease-in-out;
     ${({ isOpen }) =>
-        (isOpen? `transform: translateY(0%)`:`translateY(-150%)`)};
+        (isOpen? `transform: translateY(-10%)`:`translateY(-150%)`)};
 `;
 
 const NavBar:React.FC = () => {
