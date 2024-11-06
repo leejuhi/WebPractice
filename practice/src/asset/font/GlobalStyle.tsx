@@ -9,7 +9,7 @@ const GlobalStyle = () => (
 
             body {
                 font-family: 'Noto Sans KR', sans-serif;
-                margin: 0;
+                margin-top: 100px;
                 padding: 0;
                 box-sizing: border-box;
             }

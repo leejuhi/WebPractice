@@ -36,17 +36,17 @@ type MobileMenuProps = {
 
 const MobileMenu = styled.div<MobileMenuProps>`
     box-sizing:border-box;
-    height:1px;
     background: white;
     color: black;
     postion: relative;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    transform: translateY(-30000%);
+    padding-left:30px;
+    transform: translateY(-150%);
     transition: transform 0.6s ease-in-out;
     ${({ isOpen }) =>
-        (isOpen? `transform: translateY(50%)`:`translateY(-30000%)`)};
+        (isOpen? `transform: translateY(0%)`:`translateY(-150%)`)};
 `;
 
 const NavBar:React.FC = () => {
@@ -95,6 +95,7 @@ const NavBar:React.FC = () => {
                     </>
                 ) : (
                     <>
+                    <div className={css`position:fixed;width:calc(100%);top:0;`}>
                         <Menu>
                             <div className={css`padding: 10px;`}>사이트 이름</div>
                             <button onClick={toggleMenu} className=
@@ -114,20 +115,20 @@ const NavBar:React.FC = () => {
                             className={css`
                                 display: flex;
                                 justify-content: center;
-                                margin: 0px 20px;
+                                margin: 0px 20px 10px;
                                 border-top: 1px solid #e6e6e6;
                                 width: calc(100% - 40px);
                             `}
                         />
+    
                     <MobileMenu isOpen={isMenuOpen}>
-                            <div className={css`background-color:#FFFFFF;padding-left:50px;`}>
                                 <Space><StyledLink to="/">홈페이지</StyledLink></Space>
                                 <Space><StyledLink to="/activity">활동</StyledLink></Space>
                                 <Space><StyledLink to="/recruit">지원하기</StyledLink></Space>
                                 <Space><StyledLink to="/qna">문의</StyledLink></Space>
                                 <Space><StyledLink to="/login">로그인</StyledLink></Space>
-                            </div>
                     </MobileMenu>
+                    </div>
                     </>
                 )}
             
