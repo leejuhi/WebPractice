@@ -31,9 +31,11 @@ const HomePage = () => {
         <NavBar />
         <BackGround >
             안녕하세용
-            <button onClick={scrollDown}>내려가기</button>
+            <button onClick={scrollDown}>저를 눌러주세용</button>
         </BackGround>
-        <BackGround ></BackGround>
+        <BackGround >
+            방가워요
+        </BackGround>
        </>
     );
 };
