@@ -1,12 +1,13 @@
 import React from "react";
 import NavBar from "../components/navBar/NavBar.tsx";
 import styled from "@emotion/styled";
+import ButtonArrow from "../components/ButtonArrow.tsx";
 
 const BackGround=styled.div`
     box-sizing:border-box;
     width:100%;
     height:calc(100vh - 10px);
-    background:linear-gradient(white,#C5E2FF);
+    background:linear-gradient(white,#7FBFF5);
     display:flex;
     font-size:60px;
     font-weight:600;
@@ -31,7 +32,7 @@ const HomePage = () => {
         <NavBar />
         <BackGround >
             안녕하세용
-            <button onClick={scrollDown}>저를 눌러주세용</button>
+            <ButtonArrow onClick={scrollDown} />
         </BackGround>
         <BackGround >
             방가워요
