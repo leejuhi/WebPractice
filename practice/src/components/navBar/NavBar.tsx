@@ -7,7 +7,8 @@ const Menu = styled.div`
     background-color:white;
     box-sizing: border-box;
     padding: 15px 50px;
-    font-size: 18px;
+    font-size: 15px;
+    font-weight:300;
     top: 0px;
     display: flex;
     justify-content: space-between;
@@ -50,6 +51,9 @@ const MobileMenu = styled.div<MobileMenuProps>`
         (isOpen? `transform: translateY(-10%)`:`translateY(-150%)`)};
 `;
 
+const topBarStyle=css`
+`
+
 const NavBar:React.FC = () => {
     const [isMobile, setIsMobile] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -72,6 +76,7 @@ const NavBar:React.FC = () => {
         <>
                 {!isMobile ? (
                     <>
+                    <div >
                     <div className={css`position:fixed;width:calc(100%);top:0;`}>
                         <Menu>
                             <div className={css`padding: 10px;`}>사이트 이름</div>
@@ -83,15 +88,7 @@ const NavBar:React.FC = () => {
                             </div>
                             <Space><StyledLink to="/login">로그인</StyledLink></Space>
                         </Menu>
-                        <div
-                            className={css`
-                                display: flex;
-                                justify-content: center;
-                                margin: 0px 20px;
-                                border-top: 1px solid #e6e6e6;
-                                width: calc(100% - 40px);
-                            `}
-                        />
+                    </div>
                     </div>
                     </>
                 ) : (

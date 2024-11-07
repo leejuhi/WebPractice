@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import GlobalStyle from './asset/font/GlobalStyle.tsx';
-import HomePage from './components/pages/HomePage.tsx';
-import LoginPage from './components/pages/LoginPage.tsx';
-import RecruitPage from './components/pages/RecruitPage.tsx';
-import QnaPage from './components/pages/QnAPage.tsx';
-import ActivityPage from './components/pages/ActivityPage.tsx';
+import HomePage from './pages/HomePage.tsx';
+import LoginPage from './pages/LoginPage.tsx';
+import RecruitPage from './pages/RecruitPage.tsx';
+import QnaPage from './pages/QnAPage.tsx';
+import ActivityPage from './pages/ActivityPage.tsx';
 
 
 function App() {

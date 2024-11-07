@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "../navBar/NavBar.tsx";
+import NavBar from "../components/navBar/NavBar.tsx";
 import styled from "@emotion/styled";
 import { css } from "@emotion/css";
 
