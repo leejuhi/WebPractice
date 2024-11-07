@@ -21,14 +21,19 @@ const Menu = styled.div<MenuProps>`
 type MenuProps = {
     isMove: boolean;
 };
-const Space = styled.div`
+type SpaceProps={
+    isMobile:boolean
+}
+const Space = styled.div<SpaceProps>`
     box-sizing: border-box;
     border: none;
-    border-radius: 5px;
     &:hover {
         background-color: #e6e6e6;
     }
-    padding: 10px 20px;
+    padding: ${({ isMobile }) => (isMobile ? `18px 20px` : `12px 10px`)};
+    width: ${({ isMobile }) => (isMobile ? `100%` : `auto`)};
+    border-radius: ${({ isMobile }) => (isMobile ? `0` : `8px`)};
+
 `;
 
 
@@ -41,7 +46,7 @@ const MobileMenu = styled.div<MobileMenuProps>`
     background: white;
     color: black;
     position: absolute;
-    top:50px; /* 상단바 바로 아래에 위치 */
+    top:50px;
     left: 0;
     right: 0;
     overflow: hidden;
@@ -49,8 +54,7 @@ const MobileMenu = styled.div<MobileMenuProps>`
     transition: max-height 0.3s ease-out;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: ${({ isOpen }) => (isOpen ? "10px 20px" : "0px 20px")};
+    padding: 0px;
 `;
 
 
@@ -84,16 +88,15 @@ const NavBar:React.FC = () => {
         <>
                 {!isMobile ? (
                     <>
-                    
                         <Menu isMove={isMove}>
-                            <div className={css`padding: 10px;`}>사이트 이름</div>
+                            <div className={css`padding: 10px 0px;`}>사이트 이름</div>
                             <div className={css`display: flex; gap: 10px;`}>
-                                <Space><Link to="/">홈페이지</Link></Space>
-                                <Space><Link to="/activity">활동</Link></Space>
-                                <Space><Link to="/recruit">지원하기</Link></Space>
-                                <Space><Link to="/qna">문의</Link></Space>
+                                <Link to="/"><Space isMobile={false} >홈페이지</Space></Link>
+                                <Link to="/activity"><Space isMobile={false}>활동</Space></Link>
+                                <Link to="/recruit"><Space isMobile={false}>지원하기</Space></Link>
+                                <Link to="/qna"><Space isMobile={false}>문의</Space></Link>
                             </div>
-                            <Space><Link to="/login">로그인</Link></Space>
+                                <Link to="/login"><Space isMobile={false}>로그인</Space></Link>
                         </Menu>
                 
                     
@@ -102,7 +105,7 @@ const NavBar:React.FC = () => {
                     <>
                     <div className={css`position:fixed;width:calc(100%);top:0;`}>
                         <Menu isMove={isMove}>
-                            <div className={css`padding: 10px;`}>사이트 이름</div>
+                            <div className={css`padding: 10px 0px;`}>사이트 이름</div>
                             <button onClick={toggleMenu} className=
                             {css`padding: 10px; 
                                 box-sizing:border-box; 
@@ -116,11 +119,11 @@ const NavBar:React.FC = () => {
                             </button>
                         </Menu>
                         <MobileMenu isOpen={isMenuOpen}>
-                                    <Space><Link to="/">홈페이지</Link></Space>
-                                    <Space><Link to="/activity">활동</Link></Space>
-                                    <Space><Link to="/recruit">지원하기</Link></Space>
-                                    <Space><Link to="/qna">문의</Link></Space>
-                                    <Space><Link to="/login">로그인</Link></Space>
+                                    <Link to="/"><Space isMobile={isMobile} >홈페이지</Space></Link>
+                                    <Link to="/activity"><Space isMobile={isMobile}>활동</Space></Link>
+                                    <Link to="/recruit"><Space isMobile={isMobile}>지원하기</Space></Link>
+                                    <Link to="/qna"><Space isMobile={isMobile}>문의</Space></Link>
+                                    <Link to="/login"><Space isMobile={isMobile}>로그인</Space></Link>
                         </MobileMenu>
                     </div>
                     </>
