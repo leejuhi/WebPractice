@@ -15,11 +15,13 @@ const GlobalStyle = () => (
             body {
                 font-family: 'Spoqa Han Sans Neo', 'sans-serif';
                 margin: 0px;
-                margin-top: 100px;
+                margin-top: 50px;
                 padding: 0;
                 font-size: 15px;
                 font-weight:300;
                 box-sizing: border-box;
+                word-break: keep-all;
+                white-space: pre-wrap;
             }
 
             input:focus {

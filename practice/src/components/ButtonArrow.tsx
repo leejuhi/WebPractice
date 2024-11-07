@@ -12,7 +12,7 @@ const pulseWidth = keyframes`
     stroke-width: 10;
   }
   50% {
-    stroke-width: 13;
+    stroke-width: 14;
   }
   100% {
     stroke-width: 10;
@@ -21,16 +21,16 @@ const pulseWidth = keyframes`
 
 
 const ArrowButton = styled.button`
-  cursor: pointer;
-  background: transparent;
-  border: none;
-  outline: 0;
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 10px; 
-  position:relative;
-  z-index:100;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: 0;
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 100;
   svg {
     stroke-linecap: round;
     stroke-linejoin: round;

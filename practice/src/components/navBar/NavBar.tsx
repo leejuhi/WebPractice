@@ -91,14 +91,14 @@ const NavBar:React.FC = () => {
                 {!isMobile ? (
                     <>
                         <Menu isMove={isMove}>
-                            <div className={css`padding: 10px 0px;`}>사이트 이름</div>
+                            <div className={css`margin:auto`}>사이트 이름</div>
                             <div className={css`display: flex; gap: 10px;`}>
                                 <Link to="/"><Space isMobile={false} >홈페이지</Space></Link>
                                 <Link to="/activity"><Space isMobile={false}>활동</Space></Link>
                                 <Link to="/recruit"><Space isMobile={false}>지원하기</Space></Link>
                                 <Link to="/qna"><Space isMobile={false}>문의</Space></Link>
                             </div>
-                                <Link to="/login"><Space isMobile={false}>로그인</Space></Link>
+                            <div className={css`margin:auto`}><Link to="/login">로그인</Link></div>
                         </Menu>
                 
                     
