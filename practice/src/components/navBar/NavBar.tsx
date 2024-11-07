@@ -3,34 +3,34 @@ import { css } from "@emotion/css";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const Menu = styled.div`
+const Menu = styled.div<MenuProps>`
+    position:fixed;
+    width:calc(100%);
+    height:59px;
     background-color:white;
     box-sizing: border-box;
-    padding: 15px 50px;
+    padding:0px 20px;
     font-size: 15px;
     font-weight:300;
     top: 0px;
     display: flex;
     justify-content: space-between;
+    align-items:center;
+    ${({isMove})=>(isMove?`border-bottom:1px solid #E6E8EA`:`box-shadow:none`)}
     `;
-
+type MenuProps = {
+    isMove: boolean;
+};
 const Space = styled.div`
     box-sizing: border-box;
     border: none;
-    border-radius: 20px;
+    border-radius: 5px;
     &:hover {
         background-color: #e6e6e6;
     }
-    padding: 10px;
+    padding: 10px 20px;
 `;
 
-const StyledLink = styled(Link)`
-    text-decoration: none;
-    color: inherit;
-    &:visited {
-        color: inherit;
-    }
-`;
 
 type MobileMenuProps = {
     isOpen: boolean;
@@ -48,14 +48,14 @@ const MobileMenu = styled.div<MobileMenuProps>`
     transform: translateY(-150%);
     transition: transform 0.6s ease-in-out;
     ${({ isOpen }) =>
-        (isOpen? `transform: translateY(-10%)`:`translateY(-150%)`)};
+        (isOpen? `transform: translateY(20%)`:`translateY(-150%)`)};
 `;
 
-const topBarStyle=css`
-`
+
 
 const NavBar:React.FC = () => {
     const [isMobile, setIsMobile] = useState(false);
+    const [isMove,setIsMove]=useState(false)
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -71,60 +71,56 @@ const NavBar:React.FC = () => {
         handleResize();
         return () => window.removeEventListener("resize", handleResize);
     }, []);
-
+    useEffect(()=>{
+        const handleScroll=()=>{
+            setIsMove(window.scrollY>0);
+        };
+        window.addEventListener("scroll",handleScroll);
+        return ()=> window.removeEventListener("scroll",handleScroll);
+    },[])
     return (
         <>
                 {!isMobile ? (
                     <>
-                    <div >
-                    <div className={css`position:fixed;width:calc(100%);top:0;`}>
-                        <Menu>
+                    
+                        <Menu isMove={isMove}>
                             <div className={css`padding: 10px;`}>사이트 이름</div>
                             <div className={css`display: flex; gap: 10px;`}>
-                                <Space><StyledLink to="/">홈페이지</StyledLink></Space>
-                                <Space><StyledLink to="/activity">활동</StyledLink></Space>
-                                <Space><StyledLink to="/recruit">지원하기</StyledLink></Space>
-                                <Space><StyledLink to="/qna">문의</StyledLink></Space>
+                                <Space><Link to="/">홈페이지</Link></Space>
+                                <Space><Link to="/activity">활동</Link></Space>
+                                <Space><Link to="/recruit">지원하기</Link></Space>
+                                <Space><Link to="/qna">문의</Link></Space>
                             </div>
-                            <Space><StyledLink to="/login">로그인</StyledLink></Space>
+                            <Space><Link to="/login">로그인</Link></Space>
                         </Menu>
-                    </div>
-                    </div>
+                
+                    
                     </>
                 ) : (
                     <>
                     <div className={css`position:fixed;width:calc(100%);top:0;`}>
-                        <Menu>
+                        <Menu isMove={isMove}>
                             <div className={css`padding: 10px;`}>사이트 이름</div>
                             <button onClick={toggleMenu} className=
                             {css`padding: 10px; 
                                 box-sizing:border-box; 
-                                border:none; 
+                                border:none;
                                 background-color:white;
-                                border-radius: 20px;
-                                font-size:15px;
+                                border-radius: 5px;
                                 &:hover {
                                     background-color: #e6e6e6;
                                 }`}>
                                 메뉴
                             </button>
                         </Menu>
-                        <div
-                            className={css`
-                                display: flex;
-                                justify-content: center;
-                                margin: 0px 20px 10px;
-                                border-top: 1px solid #e6e6e6;
-                                width: calc(100% - 40px);
-                            `}
-                        />
+
     
                     <MobileMenu isOpen={isMenuOpen}>
-                                <Space><StyledLink to="/">홈페이지</StyledLink></Space>
-                                <Space><StyledLink to="/activity">활동</StyledLink></Space>
-                                <Space><StyledLink to="/recruit">지원</StyledLink></Space>
-                                <Space><StyledLink to="/qna">문의</StyledLink></Space>
-                                <Space><StyledLink to="/login">로그인</StyledLink></Space>
+                                <Space><Link to="/">홈페이지</Link></Space>
+                                <Space><Link to="/activity">활동</Link></Space>
+                                <Space><Link to="/recruit">지원하기</Link></Space>
+                                <Space><Link to="/qna">문의</Link></Space>
+                                <Space><Link to="/login">로그인</Link></Space>
                     </MobileMenu>
                     </div>
                     </>

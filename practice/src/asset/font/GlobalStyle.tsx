@@ -6,12 +6,18 @@ const GlobalStyle = () => (
     <Global
         styles={css`
             ${fonts}
-
+            *{
+                font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+                font-size: 15px;
+                font-weight:300;
+            }
             body {
                 font-family: 'Spoqa Han Sans Neo', 'sans-serif';
                 margin: 0px;
                 margin-top: 100px;
                 padding: 0;
+                font-size: 15px;
+                font-weight:300;
                 box-sizing: border-box;
             }
 

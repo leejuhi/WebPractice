@@ -18,7 +18,7 @@ const HomePage = () => {
 
     return (
        <>
-        <NavBar/>
+        <NavBar />
         <BackGround />
        </>
     );
