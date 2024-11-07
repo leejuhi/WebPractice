@@ -11,10 +11,12 @@ const BackGround=styled.div`
     display:flex;
     font-size:60px;
     font-weight:600;
+    position:relative;
     justify-content:center;
     flex-direction:column;
     align-items:center;
     padding-bottom:200px;
+    z-index:0;
 
 `
 

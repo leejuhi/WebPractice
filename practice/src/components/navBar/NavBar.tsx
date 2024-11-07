@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const Menu = styled.div<MenuProps>`
     position:fixed;
+    z-index:3;
     width:calc(100%);
     height:59px;
     background-color:white;
@@ -46,6 +47,7 @@ const MobileMenu = styled.div<MobileMenuProps>`
     background: white;
     color: black;
     position: absolute;
+    z-index:20;
     top:50px;
     left: 0;
     right: 0;
@@ -103,7 +105,7 @@ const NavBar:React.FC = () => {
                     </>
                 ) : (
                     <>
-                    <div className={css`position:fixed;width:calc(100%);top:0;`}>
+                    <div className={css`position:fixed;z-index:5;width:calc(100%);top:0;`}>
                         <Menu isMove={isMove}>
                             <div className={css`padding: 10px 0px;`}>사이트 이름</div>
                             <button onClick={toggleMenu} className=

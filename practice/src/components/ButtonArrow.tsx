@@ -1,10 +1,24 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { keyframes } from '@emotion/css';
 
 type ButtonArrowProps = {
   onClick?: () => void;
   children?: React.ReactNode;
 };
+
+const pulseWidth = keyframes`
+  0% {
+    stroke-width: 10;
+  }
+  50% {
+    stroke-width: 13;
+  }
+  100% {
+    stroke-width: 10;
+  }
+`;
+
 
 const ArrowButton = styled.button`
   cursor: pointer;
@@ -14,12 +28,17 @@ const ArrowButton = styled.button`
   position: relative;
   display: flex;
   align-items: center;
-  gap: 10px; /* 아이콘과 텍스트 간격 */
-
+  gap: 10px; 
+  position:relative;
+  z-index:100;
   svg {
     stroke-linecap: round;
     stroke-linejoin: round;
     transform: rotate(270deg);
+    filter: drop-shadow(1px 0px 2px rgba(0, 0, 0, 0.2));
+    path{
+        animation:${pulseWidth} 1.35s infinite ease-in-out;
+    }
   }
 
   &:hover path {
@@ -34,7 +53,7 @@ const ArrowButton = styled.button`
 
 const ButtonArrow: React.FC<ButtonArrowProps> = ({ onClick, children }) => (
   <ArrowButton onClick={onClick}>
-    <svg width="150px" height="150px" viewBox="-10 -50 80 180" xmlSpace="preserve">
+    <svg width="100px" height="100px" viewBox="-10 -50 80 180" xmlSpace="preserve">
       <path
         fill="none"
         stroke="#FFFFFF"
