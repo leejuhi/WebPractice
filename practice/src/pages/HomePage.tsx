@@ -8,7 +8,7 @@ const BackGround=styled.div`
     box-sizing:border-box;
     white-space: pre-line;
     width:100%;
-    height:calc(100vh - 80px);
+    height:calc(100vh - 70px);
     background:linear-gradient(white,#7FBFF5BF),url(${backgroundImage});
     background-size: cover;
     background-position: center;

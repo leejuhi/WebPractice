@@ -15,7 +15,7 @@ const GlobalStyle = () => (
             body {
                 font-family: 'Spoqa Han Sans Neo', 'sans-serif';
                 margin: 0px;
-                margin-top: 50px;
+                margin-top: 70px;
                 padding: 0;
                 font-size: 15px;
                 font-weight:300;
