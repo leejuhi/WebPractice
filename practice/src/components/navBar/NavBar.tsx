@@ -37,18 +37,20 @@ type MobileMenuProps = {
 };
 
 const MobileMenu = styled.div<MobileMenuProps>`
-    box-sizing:border-box;
+    box-sizing: border-box;
     background: white;
     color: black;
-    postion: relative;
+    position: absolute;
+    top:50px; /* 상단바 바로 아래에 위치 */
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    max-height: ${({ isOpen }) => (isOpen ? "300px" : "0px")};
+    transition: max-height 0.3s ease-out;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding:10px 30px;
-    transform: translateY(-150%);
-    transition: transform 0.6s ease-in-out;
-    ${({ isOpen }) =>
-        (isOpen? `transform: translateY(20%)`:`translateY(-150%)`)};
+    padding: ${({ isOpen }) => (isOpen ? "10px 20px" : "0px 20px")};
 `;
 
 
@@ -113,15 +115,13 @@ const NavBar:React.FC = () => {
                                 메뉴
                             </button>
                         </Menu>
-
-    
-                    <MobileMenu isOpen={isMenuOpen}>
-                                <Space><Link to="/">홈페이지</Link></Space>
-                                <Space><Link to="/activity">활동</Link></Space>
-                                <Space><Link to="/recruit">지원하기</Link></Space>
-                                <Space><Link to="/qna">문의</Link></Space>
-                                <Space><Link to="/login">로그인</Link></Space>
-                    </MobileMenu>
+                        <MobileMenu isOpen={isMenuOpen}>
+                                    <Space><Link to="/">홈페이지</Link></Space>
+                                    <Space><Link to="/activity">활동</Link></Space>
+                                    <Space><Link to="/recruit">지원하기</Link></Space>
+                                    <Space><Link to="/qna">문의</Link></Space>
+                                    <Space><Link to="/login">로그인</Link></Space>
+                        </MobileMenu>
                     </div>
                     </>
                 )}
