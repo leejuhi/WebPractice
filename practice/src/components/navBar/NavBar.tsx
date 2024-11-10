@@ -10,7 +10,6 @@ const Menu = styled.div<MenuProps>`
     height:59px;
     background-color:white;
     box-sizing: border-box;
-    padding:0px 20px;
     font-size: 15px;
     font-weight:300;
     top: 0px;
@@ -91,7 +90,7 @@ const NavBar:React.FC = () => {
                 {!isMobile ? (
                     <>
                         <Menu isMove={isMove}>
-                            <div className={css`margin:auto`}>사이트 이름</div>
+                            <div className={css`margin:auto`}>사이트</div>
                             <div className={css`display: flex; gap: 10px;`}>
                                 <Link to="/"><Space isMobile={false} >홈페이지</Space></Link>
                                 <Link to="/activity"><Space isMobile={false}>활동</Space></Link>

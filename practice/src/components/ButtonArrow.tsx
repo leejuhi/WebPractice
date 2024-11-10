@@ -26,7 +26,7 @@ const ArrowButton = styled.button`
     border: none;
     outline: 0;
     position: absolute;
-    bottom: 40px;
+    bottom: 20px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -58,7 +58,7 @@ const ButtonArrow: React.FC<ButtonArrowProps> = ({ onClick, children }) => (
         fill="none"
         stroke="#FFFFFF"
         strokeWidth="8"
-        d="M40,100 L0,40 L40,-20" // 화살표 모양
+        d="M40,100 L0,40 L40,-20" 
       />
     </svg>
     {children && <span>{children}</span>}

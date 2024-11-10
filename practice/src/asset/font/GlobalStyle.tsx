@@ -7,6 +7,7 @@ const GlobalStyle = () => (
         styles={css`
             ${fonts}
             *{
+                box-sizing:border-box;
                 font-family: 'Spoqa Han Sans Neo', 'sans-serif';
                 font-size: 15px;
                 font-weight:300;
