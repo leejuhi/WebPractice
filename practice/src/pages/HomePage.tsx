@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import NavBar from "../components/navBar/NavBar.tsx";
 import styled from "@emotion/styled";
 import ButtonArrow from "../components/ButtonArrow.tsx";
-import backgroundImage from "../components/image/background.jpg";
+import backgroundImage from "../components/image/background.png";
 import mguImage1 from "../components/image/mockup.svg";
 import mguImage2 from "../components/image/mockup2.svg";
 import { css, keyframes } from "@emotion/css";
@@ -33,7 +33,7 @@ const BackGround = styled.div`
   white-space: pre-line;
   width: 100%;
   height: calc(100vh - 70px);
-  background: linear-gradient(white, #7fbff5bf), url(${backgroundImage});
+  background: linear-gradient(white, #e0f2f700), url(${backgroundImage});
   background-size: cover;
   background-position: center;
   display: flex;
@@ -82,7 +82,6 @@ const HomePage = () => {
           target.getBoundingClientRect().top + window.scrollY;
         if (window.scrollY >= targetPosition - 59) {
           setVisible(true);
-          window.removeEventListener("scroll", handleScroll);
         }
       }
     };
@@ -194,9 +193,9 @@ const HomePage = () => {
           <div
             className={css`
               position: absolute;
-              top: 1000px;
-              right: 0px;
-              width: 400px;
+              top: 1050px;
+              right: 100px;
+              width: 350px;
               z-index: -1;
             `}
           >
