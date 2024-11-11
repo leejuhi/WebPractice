@@ -94,8 +94,8 @@ const HomePage = () => {
     <>
       <NavBar />
       <BackGround>
-        {`안녕하세요
-            저는 이주희입니다!`}
+        {`배경은 제가 만든
+ 미피입니당 귀엽져?`}
         <ButtonArrow onClick={scrollDown} />
       </BackGround>
       <BackGround2 id="target-element">
