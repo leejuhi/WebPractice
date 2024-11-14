@@ -81,6 +81,7 @@ const HomePage = () => {
     }
   };
   useEffect(() => {
+    window.scrollTo(0, 0);
     const handleScroll = () => {
       const target = document.getElementById("target-element2");
       if (target) {
@@ -102,9 +103,18 @@ const HomePage = () => {
       <BackGround isMobile={ismobile}>
         {`배경은 제가 만든
  미피입니당 귀엽져?`}
-        <ButtonArrow onClick={scrollDown} />
+        <a
+          href="#intro"
+          className={css`
+            width: 100%;
+            display: flex;
+            justify-content: center;
+          `}
+        >
+          <ButtonArrow onClick={scrollDown} />
+        </a>
       </BackGround>
-      <BackGround2 id="target-element" isMobile={ismobile}>
+      <BackGround2 id="intro" isMobile={ismobile}>
         {`방가워요 저는 주희에요. 
 제 모든 웹 사이트 만드는 기술을 여기서 확인하세요. 
 연습이 끝나면 저는 발전 되어 있을 거에요.`}
@@ -120,11 +130,12 @@ const HomePage = () => {
         <div
           className={css`
             position: relative;
-            align-item: center;
+            align-items: center;
             padding-top: 150px;
             width: 92%;
             max-width: 1140px;
           `}
+          id="activity"
         >
           {!ismobile ? (
             <>
@@ -161,6 +172,7 @@ const HomePage = () => {
                   </h2>
                 </Item>
               </div>
+
               <div
                 className={css`
                   position: absolute;
@@ -253,65 +265,66 @@ const HomePage = () => {
                     {`맛집 지도, 너랑만 나누고 싶은 비밀`}
                   </h2>
                 </Item>
-              </div>
-              <div
-                className={css`
-                  position: absolute;
-                  top: 280px;
-                  right: 350px;
-                  z-index: -1;
-                `}
-              >
-                <Item isVisible={isVisible} delay={2}>
-                  <img
-                    src={mguImage1}
-                    alt="mgu1"
-                    className={css`
-                      width: 200px;
-                    `}
-                  />
-                </Item>
-              </div>
-              <div
-                className={css`
-                  position: absolute;
-                  top: 280px;
-                  right: 150px;
-                  z-index: -1;
-                `}
-              >
-                <Item isVisible={isVisible} delay={2.5}>
-                  <img
-                    src={mguImage2}
-                    alt="mgu2"
-                    className={css`
-                      width: 200px;
-                    `}
-                  />
-                </Item>
-              </div>
-              <div
-                className={css`
-                  position: absolute;
-                  top: 650px;
-                  left: 50px;
-                  width: 350px;
-                  z-index: -1;
-                `}
-              >
-                <Item isVisible={isVisible} delay={2.5}>
+                <div
+                  className={css`
+                    display: flex;
+                    padding: 20px;
+                  `}
+                >
                   <div
                     className={css`
-                      font-size: 18px;
-                      font-weight: 400;
-                      line-height: 1.4;
+                      position: relative;
+                      z-index: -1;
                     `}
-                  >{`머거유에서 
+                  >
+                    <Item isVisible={isVisible} delay={2}>
+                      <img
+                        src={mguImage1}
+                        alt="mgu1"
+                        className={css`
+                          width: 200px;
+                        `}
+                      />
+                    </Item>
+                  </div>
+                  <div
+                    className={css`
+                    position: relative
+                    z-index: -1;
+                  `}
+                  >
+                    <Item isVisible={isVisible} delay={2.5}>
+                      <img
+                        src={mguImage2}
+                        alt="mgu2"
+                        className={css`
+                          width: 200px;
+                        `}
+                      />
+                    </Item>
+                  </div>
+                </div>
+                <div
+                  className={css`
+                    position: relative;
+                    width: 350px;
+                    z-index: -1;
+                  `}
+                >
+                  <Item isVisible={isVisible} delay={2.5}>
+                    <div
+                      className={css`
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 1.4;
+                      `}
+                    >{`머거유에서 
 친구의 맛집 지도를 교환받아
 친구가 알고 있는 맛집을 찾아보세요.
 진짜 숨은 맛집을 발견 할거에요!
         `}</div>
-                </Item>
+                  </Item>
+                </div>
               </div>
             </>
           )}

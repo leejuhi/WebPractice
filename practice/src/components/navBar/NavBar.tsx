@@ -62,7 +62,9 @@ const NavBar: React.FC = () => {
   const isMobile = useIsMobile();
   const [isMove, setIsMove] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     console.log(true);
@@ -91,27 +93,21 @@ const NavBar: React.FC = () => {
               className={css`
                 display: flex;
                 gap: 10px;
-              `}
-            >
-              <Link to="/">
-                <Space isMobile={false}>홈페이지</Space>
-              </Link>
-              <Link to="/activity">
-                <Space isMobile={false}>활동</Space>
-              </Link>
-              <Link to="/recruit">
-                <Space isMobile={false}>지원하기</Space>
-              </Link>
-              <Link to="/qna">
-                <Space isMobile={false}>문의</Space>
-              </Link>
-            </div>
-            <div
-              className={css`
                 margin: auto;
               `}
             >
-              <Link to="/login">로그인</Link>
+              <Link to="/" onClick={scrollToTop}>
+                <Space isMobile={false}>홈페이지</Space>
+              </Link>
+              <a href="#intro">
+                <Space isMobile={false}>소개</Space>
+              </a>
+              <a href="#activity">
+                <Space isMobile={false}>프로젝트</Space>
+              </a>
+              <Link to="/qna">
+                <Space isMobile={false}>문의</Space>
+              </Link>
             </div>
           </Menu>
         </>

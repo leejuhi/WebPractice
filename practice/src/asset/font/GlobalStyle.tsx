@@ -40,6 +40,9 @@ const GlobalStyle = () => (
       button {
         border: none;
       }
+      html {
+        scroll-behavior: smooth;
+      }
     `}
   />
 );
