@@ -7,6 +7,12 @@ import mguImage1 from "../components/image/mockup.svg";
 import mguImage2 from "../components/image/mockup2.svg";
 import { css, keyframes } from "@emotion/css";
 import useIsMobile from "../components/hooks/useIsMobile.ts";
+import chick from "../components/image/chick.svg";
+import css3 from "../components/image/Logos/css3.svg";
+import html from "../components/image/Logos/html.svg";
+import javascript from "../components/image/Logos/javascript.svg";
+import typescript from "../components/image/Logos/typescript.svg";
+import { FaSchool } from "react-icons/fa6";
 
 const fadeIn = keyframes`
   from {
@@ -115,9 +121,85 @@ const HomePage = () => {
         </a>
       </BackGround>
       <BackGround2 id="intro" isMobile={ismobile}>
-        {`방가워요 저는 주희에요. 
-제 모든 웹 사이트 만드는 기술을 여기서 확인하세요. 
-연습이 끝나면 저는 발전 되어 있을 거에요.`}
+        <img
+          src={chick}
+          alt="chick"
+          className={css`
+            width: 100px;
+          `}
+        />
+        <div
+          className={css`
+            display: flex;
+            flex-direction: column;
+            margin: 25px;
+            gap: 5px;
+            text-align: left;
+            font-size: 30px;
+            font-weight: 500;
+          `}
+        >
+          이주희
+          <div
+            className={css`
+              font-size: 18px;
+              color: #848484;
+            `}
+          >
+            프론트 개발 지망생
+          </div>
+          <div
+            className={css`
+              font-size: 20px;
+              font-weight: 300;
+            `}
+          >
+            <FaSchool /> 홍익대학교 컴퓨터 공학과
+            <br />
+            <div
+              className={css`
+                margin-top: 20px;
+              `}
+            >
+              사용 언어
+            </div>
+            <div
+              className={css`
+                display: flex;
+                gap: 10px;
+              `}
+            >
+              <img
+                src={css3}
+                alt="css"
+                className={css`
+                  width: 60px;
+                `}
+              />
+              <img
+                src={html}
+                alt="html"
+                className={css`
+                  width: 60px;
+                `}
+              />
+              <img
+                src={javascript}
+                alt="javascript"
+                className={css`
+                  width: 60px;
+                `}
+              />
+              <img
+                src={typescript}
+                alt="typescript"
+                className={css`
+                  width: 60px;
+                `}
+              />
+            </div>
+          </div>
+        </div>
       </BackGround2>
 
       <div

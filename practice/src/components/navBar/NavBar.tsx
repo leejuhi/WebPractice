@@ -86,6 +86,8 @@ const NavBar: React.FC = () => {
               className={css`
                 margin: auto;
               `}
+              onClick={scrollToTop}
+              style={{ cursor: "pointer" }}
             >
               주희넷
             </div>
@@ -126,6 +128,8 @@ const NavBar: React.FC = () => {
                 className={css`
                   padding: 10px 20px;
                 `}
+                onClick={scrollToTop}
+                style={{ cursor: "pointer" }}
               >
                 주희넷
               </div>
@@ -146,20 +150,17 @@ const NavBar: React.FC = () => {
               </button>
             </Menu>
             <MobileMenu isOpen={isMenuOpen}>
-              <Link to="/">
-                <Space isMobile={isMobile}>홈페이지</Space>
+              <Link to="/" onClick={scrollToTop}>
+                <Space isMobile={true}>홈페이지</Space>
               </Link>
-              <Link to="/activity">
-                <Space isMobile={isMobile}>활동</Space>
-              </Link>
-              <Link to="/recruit">
-                <Space isMobile={isMobile}>지원하기</Space>
-              </Link>
+              <a href="#intro">
+                <Space isMobile={true}>소개</Space>
+              </a>
+              <a href="#activity">
+                <Space isMobile={true}>프로젝트</Space>
+              </a>
               <Link to="/qna">
-                <Space isMobile={isMobile}>문의</Space>
-              </Link>
-              <Link to="/login">
-                <Space isMobile={isMobile}>로그인</Space>
+                <Space isMobile={true}>문의</Space>
               </Link>
             </MobileMenu>
           </div>
