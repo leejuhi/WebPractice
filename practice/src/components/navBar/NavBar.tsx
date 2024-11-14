@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/css";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useIsMobile from "../hooks/useIsMobile.ts";
 
 const Menu = styled.div<MenuProps>`
   position: fixed;
@@ -58,7 +59,7 @@ const MobileMenu = styled.div<MobileMenuProps>`
 `;
 
 const NavBar: React.FC = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useIsMobile();
   const [isMove, setIsMove] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -67,14 +68,6 @@ const NavBar: React.FC = () => {
     console.log(true);
   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 650);
-    };
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
   useEffect(() => {
     const handleScroll = () => {
       setIsMove(window.scrollY > 0);
@@ -92,7 +85,7 @@ const NavBar: React.FC = () => {
                 margin: auto;
               `}
             >
-              사이트
+              주희넷
             </div>
             <div
               className={css`
@@ -138,7 +131,7 @@ const NavBar: React.FC = () => {
                   padding: 10px 20px;
                 `}
               >
-                사이트 이름
+                주희넷
               </div>
               <button
                 onClick={toggleMenu}
