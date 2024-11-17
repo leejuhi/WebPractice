@@ -6,6 +6,21 @@ import mguImage2 from "../image/mockup2.svg";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
 
+const pulseTransform = keyframes`
+  0% {
+    transform: scale(1);
+    opacity:0.5;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity:1;
+  }
+  100% {
+    transform: scale(1);
+    opacity:0.5;
+  }
+`;
+
 const fadeIn = keyframes`
   from {
     opacity: 0;
@@ -105,6 +120,12 @@ const Project1Section: React.FC<Project1SectionProps> = ({
                   display: flex;
                   cursor: pointer;
                   align-text: left;
+                  animation: ${pulseTransform} 1.2s infinite ease-in-out;
+                  &:hover {
+                    transform: scale(1.02);
+                    opacity: 1;
+                    animation: none;
+                  }
                 `}
               >
                 더 알아보러 가기
