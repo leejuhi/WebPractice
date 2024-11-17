@@ -3,6 +3,7 @@ import { css } from "@emotion/css";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useIsMobile from "../hooks/useIsMobile.ts";
+import { IoClose, IoMenu } from "react-icons/io5";
 
 const Menu = styled.div<MenuProps>`
   position: fixed;
@@ -107,9 +108,9 @@ const NavBar: React.FC = () => {
               <a href="#activity">
                 <Space isMobile={false}>프로젝트</Space>
               </a>
-              <Link to="/qna">
+              <a href="#contact">
                 <Space isMobile={false}>문의</Space>
-              </Link>
+              </a>
             </div>
           </Menu>
         </>
@@ -126,27 +127,28 @@ const NavBar: React.FC = () => {
             <Menu isMove={isMove}>
               <div
                 className={css`
-                  padding: 10px 20px;
+                  padding: 0px 20px;
+                  cursor: pointer;
                 `}
                 onClick={scrollToTop}
-                style={{ cursor: "pointer" }}
               >
                 주희넷
               </div>
               <button
                 onClick={toggleMenu}
                 className={css`
-                  padding: 10px 20px;
                   box-sizing: border-box;
                   border: none;
                   background-color: white;
-                  border-radius: 5px;
-                  &:hover {
-                    background-color: #e6e6e6;
-                  }
+                  cursor: pointer;
+                  padding-right: 10px;
                 `}
               >
-                메뉴
+                {isMenuOpen ? (
+                  <IoClose size="25" fill="#919191" />
+                ) : (
+                  <IoMenu size="25" stroke="#919191" />
+                )}
               </button>
             </Menu>
             <MobileMenu isOpen={isMenuOpen}>
@@ -159,9 +161,9 @@ const NavBar: React.FC = () => {
               <a href="#activity">
                 <Space isMobile={true}>프로젝트</Space>
               </a>
-              <Link to="/qna">
+              <a href="#contact">
                 <Space isMobile={true}>문의</Space>
-              </Link>
+              </a>
             </MobileMenu>
           </div>
         </>

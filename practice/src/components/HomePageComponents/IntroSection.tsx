@@ -5,7 +5,7 @@ import swift from "../image/Logos/swift.svg";
 import typescript from "../image/Logos/typescript.svg";
 import javascript from "../image/Logos/javascript.svg";
 import { css } from "@emotion/css";
-import { FaSchool } from "react-icons/fa6";
+import { FaGithub, FaSchool } from "react-icons/fa6";
 
 type BackGroundProps = {
   isMobile: boolean;
@@ -59,7 +59,11 @@ const IntroSeciton: React.FC<IntroSecitonProps> = ({ isMobile }) => {
               color: #848484;
             `}
           >
-            <FaSchool color="gray" /> 홍익대학교 컴퓨터공학과
+            홍익대학교 컴퓨터공학과
+          </div>
+          <div>
+            <FaGithub />
+            <a href="https://github.com/leejuhi"> 바로가기 </a>
           </div>
           <div
             className={css`

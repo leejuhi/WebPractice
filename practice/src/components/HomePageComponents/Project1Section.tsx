@@ -3,6 +3,8 @@ import styled from "@emotion/styled";
 import React from "react";
 import mguImage1 from "../image/mockup.svg";
 import mguImage2 from "../image/mockup2.svg";
+import { useNavigate } from "react-router-dom";
+import { IoIosArrowForward } from "react-icons/io";
 
 const fadeIn = keyframes`
   from {
@@ -33,6 +35,7 @@ const Project1Section: React.FC<Project1SectionProps> = ({
   isVisible,
   isMobile,
 }) => {
+  const navigate = useNavigate();
   return (
     <>
       <div
@@ -40,7 +43,7 @@ const Project1Section: React.FC<Project1SectionProps> = ({
           display: flex;
           justify-content: center;
         `}
-        id={"target-element2"}
+        id="target-element2"
       >
         <div
           className={css`
@@ -48,6 +51,7 @@ const Project1Section: React.FC<Project1SectionProps> = ({
             align-items: center;
             padding-top: 150px;
             width: 92%;
+            ${isMobile ? "" : `height: 1400px;`}
             max-width: 1140px;
           `}
           id="activity"
@@ -78,6 +82,7 @@ const Project1Section: React.FC<Project1SectionProps> = ({
                   font-weight: 500;
                   line-height: 1.4;
                   margin-top: 15px;
+                  margin-bottom: 10px;
                 `}
               >
                 {isMobile
@@ -87,7 +92,33 @@ const Project1Section: React.FC<Project1SectionProps> = ({
 비밀`}
               </h2>
             </Item>
+            <Item isVisible={isVisible} delay={2}>
+              <button
+                onClick={() => navigate("/mgu")}
+                className={css`
+                  width: ${isMobile ? `160px` : `180px`};
+                  font-size: ${isMobile ? `15px` : `20px`};
+                  font-weight: 400;
+                  padding: 5px;
+                  background-color: transparent;
+                  margin: 5px 0px 10px;
+                  display: flex;
+                  cursor: pointer;
+                  align-text: left;
+                `}
+              >
+                더 알아보러 가기
+                <IoIosArrowForward
+                  size={isMobile ? 18 : 25}
+                  className={css`
+                    margin-bottom: 1.5px;
+                    margin-left: 5px;
+                  `}
+                />
+              </button>
+            </Item>
           </div>
+
           <div
             className={css`
               display: flex;
@@ -151,7 +182,7 @@ const Project1Section: React.FC<Project1SectionProps> = ({
                   font-size: ${isMobile ? `18px` : `23px`};
                   font-weight: 400;
                   line-height: 1.4;
-                  margin: 0px auto;
+                  margin: 0px auto 300px;
                   ${isMobile ? `max-width: calc(100% - 60px);` : ""}
                 `}
               >{`머거유에서 

@@ -4,6 +4,7 @@ import useIsMobile from "../components/hooks/useIsMobile.ts";
 import WelcomeSection from "../components/HomePageComponents/WelcomSection.tsx";
 import IntroSeciton from "../components/HomePageComponents/IntroSection.tsx";
 import Project1Section from "../components/HomePageComponents/Project1Section.tsx";
+import ContactSection from "../components/HomePageComponents/ContactSection.tsx";
 
 const HomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -42,6 +43,7 @@ const HomePage = () => {
       <WelcomeSection isMobile={isMobile} scrollDown={scrollDown} />
       <IntroSeciton isMobile={isMobile} />
       <Project1Section isMobile={isMobile} isVisible={isVisible} />
+      <ContactSection />
     </>
   );
 };

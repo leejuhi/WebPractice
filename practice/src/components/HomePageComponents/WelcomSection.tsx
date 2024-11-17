@@ -17,7 +17,7 @@ const BackGround = styled.div<BackGroundProps>`
   white-space: pre-line;
   width: 100%;
   height: calc(100vh - 70px);
-  background: linear-gradient(white, #e0f2f700), url(${backgroundImage});
+  background: linear-gradient(#ffffff20, #ffffff00), url(${backgroundImage});
   background-size: cover;
   background-position: center;
   display: flex;

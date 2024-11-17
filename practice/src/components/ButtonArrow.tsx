@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import { keyframes } from '@emotion/css';
+import React from "react";
+import styled from "@emotion/styled";
+import { keyframes } from "@emotion/css";
 
 type ButtonArrowProps = {
   onClick?: () => void;
@@ -19,25 +19,24 @@ const pulseWidth = keyframes`
   }
 `;
 
-
 const ArrowButton = styled.button`
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    outline: 0;
-    position: absolute;
-    bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    z-index: 100;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: 0;
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 100;
   svg {
     stroke-linecap: round;
     stroke-linejoin: round;
     transform: rotate(270deg);
     filter: drop-shadow(1px 0px 2px rgba(0, 0, 0, 0.2));
-    path{
-        animation:${pulseWidth} 1.35s infinite ease-in-out;
+    path {
+      animation: ${pulseWidth} 1.35s infinite ease-in-out;
     }
   }
 
@@ -53,12 +52,17 @@ const ArrowButton = styled.button`
 
 const ButtonArrow: React.FC<ButtonArrowProps> = ({ onClick, children }) => (
   <ArrowButton onClick={onClick}>
-    <svg width="100px" height="100px" viewBox="-10 -50 80 180" xmlSpace="preserve">
+    <svg
+      width="100px"
+      height="100px"
+      viewBox="-10 -50 80 180"
+      xmlSpace="preserve"
+    >
       <path
         fill="none"
-        stroke="#FFFFFF"
+        stroke="#8f8f8f"
         strokeWidth="8"
-        d="M40,100 L0,40 L40,-20" 
+        d="M40,100 L0,40 L40,-20"
       />
     </svg>
     {children && <span>{children}</span>}
