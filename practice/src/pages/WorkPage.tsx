@@ -28,7 +28,7 @@ const WorkPage = () => {
           display: flex;
           justify-content: center;
           width: 100%;
-          margin-top: 50px;
+          margin-top: 100px;
         `}
       >
         <div
@@ -58,9 +58,8 @@ const WorkPage = () => {
             <img
               className={css`
                 position: absolute;
-                right: 0px;
+                right: ${isMobile ? `0px` : `80px`};
                 top: 0px;
-                height: 130px;
                 width: ${isMobile ? `100px` : `160px`};
               `}
               src={carrot}
