@@ -59,7 +59,7 @@ const MobileMenu = styled.div<MobileMenuProps>`
   padding: 0px;
 `;
 
-const NavBar: React.FC = () => {
+const NavBar2: React.FC = () => {
   const isMobile = useIsMobile();
   const [isMove, setIsMove] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -68,7 +68,6 @@ const NavBar: React.FC = () => {
   };
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    console.log(true);
   };
 
   useEffect(() => {
@@ -172,4 +171,4 @@ const NavBar: React.FC = () => {
   );
 };
 
-export default NavBar;
+export default NavBar2;

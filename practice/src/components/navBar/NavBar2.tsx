@@ -66,7 +66,6 @@ const NavBar2: React.FC = () => {
   const navigate = useNavigate();
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    console.log(true);
   };
 
   useEffect(() => {
@@ -102,9 +101,9 @@ const NavBar2: React.FC = () => {
               <Link to="/mgu">
                 <Space isMobile={false}>기능</Space>
               </Link>
-              <a href="#intro">
+              <Link to="/work">
                 <Space isMobile={false}>작업</Space>
-              </a>
+              </Link>
               <a href="#contact">
                 <Space isMobile={false}>문의</Space>
               </a>
@@ -151,12 +150,12 @@ const NavBar2: React.FC = () => {
               <Link to="/">
                 <Space isMobile={true}>홈페이지</Space>
               </Link>
-              <a href="#intro">
-                <Space isMobile={true}>소개</Space>
-              </a>
-              <a href="#activity">
-                <Space isMobile={true}>프로젝트</Space>
-              </a>
+              <Link to="/mgu">
+                <Space isMobile={true}>기능</Space>
+              </Link>
+              <Link to="/work">
+                <Space isMobile={true}>작업</Space>
+              </Link>
               <a href="#contact">
                 <Space isMobile={true}>문의</Space>
               </a>

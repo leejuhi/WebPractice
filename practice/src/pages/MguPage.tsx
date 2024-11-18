@@ -1,6 +1,6 @@
 import { css, keyframes } from "@emotion/css";
 import styled from "@emotion/styled";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import mguImage1 from "../components/image/mockup1.svg";
 import mguImage2 from "../components/image/mockup9.svg";
 import mguImage3 from "../components/image/mockup3.svg";
@@ -36,7 +36,7 @@ const Item = styled.div<ItemProps>`
 `;
 
 const MguPage = () => {
-  const [isVisible, setIsVisible] = useState(true);
+  const isVisible = true;
   const isMobile = useIsMobile();
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -48,6 +48,7 @@ const MguPage = () => {
         className={css`
           display: flex;
           justify-content: center;
+
           width: 100%;
         `}
       >
@@ -64,7 +65,7 @@ const MguPage = () => {
           <div
             className={css`
               position: relative;
-              margin: 0px auto;
+              margin: auto;
               max-width: calc(100% - 60px);
               z-index: 0;
             `}
