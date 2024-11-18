@@ -5,7 +5,7 @@ import swift from "../image/Logos/swift.svg";
 import typescript from "../image/Logos/typescript.svg";
 import javascript from "../image/Logos/javascript.svg";
 import { css } from "@emotion/css";
-import { FaGithub, FaSchool } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa6";
 
 type BackGroundProps = {
   isMobile: boolean;
