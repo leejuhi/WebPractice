@@ -57,7 +57,7 @@ const WorkPage = () => {
             <img
               className={css`
                 position: absolute;
-                right: 100px;
+                right: 0px;
                 top: 0px;
                 height: 130px;
                 width: ${isMobile ? `100px` : `160px`};
