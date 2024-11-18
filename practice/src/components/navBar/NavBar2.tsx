@@ -122,6 +122,9 @@ const NavBar2: React.FC = () => {
           >
             <Menu isMove={isMove}>
               <div
+                onClick={() => {
+                  navigate("/");
+                }}
                 className={css`
                   padding: 0px 20px;
                   cursor: pointer;

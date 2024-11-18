@@ -28,6 +28,7 @@ const WorkPage = () => {
           display: flex;
           justify-content: center;
           width: 100%;
+          margin-top: 50px;
         `}
       >
         <div
