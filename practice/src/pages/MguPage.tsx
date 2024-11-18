@@ -48,6 +48,7 @@ const MguPage = () => {
         className={css`
           display: flex;
           justify-content: center;
+          width: 100%;
         `}
       >
         <div
