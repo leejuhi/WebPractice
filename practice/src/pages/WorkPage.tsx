@@ -1,5 +1,4 @@
-import { css, keyframes } from "@emotion/css";
-import styled from "@emotion/styled";
+import { css } from "@emotion/css";
 import React, { useEffect, useState } from "react";
 import mgu from "../components/image/mugou.svg";
 import carrot from "../components/image/carrot.svg";
